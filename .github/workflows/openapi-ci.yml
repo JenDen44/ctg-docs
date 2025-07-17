@@ -2,8 +2,10 @@ name: Проверка OpenAPI
 
 on:
   push:
-    branches: ['**']  # Запускать для всех веток
+    branches: ['**']
+
   pull_request:
+    types: [opened, reopened, synchronize]
 
 jobs:
   lint-and-build:
