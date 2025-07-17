@@ -1,0 +1,20 @@
+type: object
+required:
+  - id
+  - fullName
+  - email
+  - role
+properties:
+  id:
+    $ref: ./user-id.yaml
+  fullName:
+    type: string
+    example: Иван Петров
+    description: Полное имя пользователя
+  email:
+    type: string
+    format: email
+    example: user@example.com
+    description: Email (уникальный)
+  role:
+    $ref: ./user-role.yaml

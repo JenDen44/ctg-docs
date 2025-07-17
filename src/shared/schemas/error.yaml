@@ -1,0 +1,35 @@
+type: object
+required:
+  - title
+  - message
+  - code
+properties:
+  title:
+    type: string
+    example: Forbidden
+    description: Краткое описание ошибки
+  message:
+    type: string
+    example: Доступ к ресурсу запрещён
+    description: Подробное сообщение об ошибке
+  code:
+    type: integer
+    description: HTTP-статус код ошибки
+    example: 403
+  fields:
+    type: [array, "null"]
+    description: Детализация ошибок по полям
+    items:
+      type: object
+      required:
+        - field
+        - message
+      properties:
+        field:
+          type: string
+          example: email
+          description: Название поля с ошибкой
+        message:
+          type: string
+          example: Должен быть валидный email
+          description: Сообщение об ошибке поля

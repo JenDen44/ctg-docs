@@ -1,0 +1,10 @@
+description: Требуется авторизация
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/error.yaml
+    example:
+      title: Ошибка авторизации
+      message: Требуется вход в систему
+      code: 401
+      fields: null

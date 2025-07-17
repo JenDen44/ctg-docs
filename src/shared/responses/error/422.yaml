@@ -1,0 +1,14 @@
+description: Ошибка валидации данных
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/error.yaml
+    example:
+      title: Ошибка в данных
+      message: Неверно заполнены поля
+      code: 422
+      fields:
+        - field: email
+          message: Такой email уже зарегистрирован
+        - field: password
+          message: Пароль должен содержать минимум 8 символов
