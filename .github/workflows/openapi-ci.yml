@@ -2,8 +2,7 @@ name: Проверка OpenAPI
 
 on:
   push:
-    branches: ['**']
-
+    branches: [main]
   pull_request:
     types: [opened, reopened, synchronize]
 
