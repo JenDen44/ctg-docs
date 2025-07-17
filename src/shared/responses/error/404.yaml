@@ -1,0 +1,10 @@
+description: Ресурс не найден
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/error.yaml
+    example:
+      title: Не найдено
+      message: Запрашиваемый объект не существует
+      code: 404
+      fields: null

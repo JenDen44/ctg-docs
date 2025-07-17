@@ -1,0 +1,8 @@
+in: query
+name: sortDir
+description: Направление сортировки
+schema:
+  type: string
+  enum: [asc, desc]
+  default: asc
+  example: desc

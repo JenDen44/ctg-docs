@@ -1,0 +1,44 @@
+summary: Создание пользователя
+description: |
+  Создает нового пользователя в системе.
+  Требует прав администратора.
+operationId: create-user
+tags:
+  - users
+security:
+  - bearerAuth: []
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: ../schemas/new-user.yaml
+      examples:
+        admin:
+          value:
+            fullName: Админ
+            email: admin@example.com
+            password: AdminP@ss123
+            role: admin
+        employee:
+          value:
+            fullName: Сотрудник
+            email: employee@example.com
+            password: employee@ss123
+            role: employee
+responses:
+  '201':
+    description: Пользователь создан
+    content:
+      application/json:
+        schema:
+          $ref: ../schemas/user.yaml
+
+  '401':
+    $ref: ../../shared/responses/error/401.yaml
+
+  '403':
+    $ref: ../../shared/responses/error/403.yaml
+
+  '422':
+    $ref: ../../shared/responses/error/422.yaml

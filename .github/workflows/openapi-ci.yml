@@ -1,0 +1,52 @@
+name: Проверка OpenAPI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  lint-and-build:
+    name: Линтинг и сборка документации
+    runs-on: ubuntu-latest
+
+    steps:
+      # Шаг 1: Получаем код из репозитория
+      - name: Загрузка кода
+        uses: actions/checkout@v4
+
+      # Шаг 2: Устанавливаем Node.js
+      - name: Установка Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Шаг 3: Кэшируем зависимости для ускорения
+      - name: Кэширование node_modules
+        uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # Шаг 4: Устанавливаем npm-зависимости
+      - name: Установка зависимостей
+        run: npm ci
+
+      # Шаг 5: Проверяем OpenAPI-спецификацию
+      - name: Проверка спецификации (lint)
+        run: npm run lint
+
+      # Шаг 6: Собираем документацию
+      - name: Сборка документации
+        run: npm run build
+
+      # Шаг 7: Сохраняем результат сборки (артефакт) — ОБНОВЛЁННАЯ ВЕРСИЯ v4
+      - name: Сохранение собранной документации
+        uses: actions/upload-artifact@v4
+        with:
+          name: openapi-docs
+          path: dist/
+          retention-days: 1

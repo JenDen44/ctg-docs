@@ -1,0 +1,6 @@
+in: query
+name: sort
+description: Поле для сортировки.
+schema:
+  type: string
+  example: name

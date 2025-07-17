@@ -1,0 +1,31 @@
+summary: Удаление пользователя
+description: |
+  Удаляет пользователя из системы по его идентификатору.
+  Требует прав администратора.
+  Внимание: Операция необратима!
+operationId: delete-user
+tags:
+  - users
+security:
+  - bearerAuth: []
+parameters:
+  - in: path
+    name: id
+    required: true
+    schema:
+      $ref: ../schemas/user-id.yaml
+responses:
+  '204':
+    description: Пользователь успешно удален (тело ответа пустое)
+
+  '401':
+    $ref: ../../shared/responses/error/401.yaml
+
+  '403':
+     $ref: ../../shared/responses/error/403.yaml
+
+  '404':
+    $ref: ../../shared/responses/error/404.yaml
+
+  '500':
+    $ref: ../../shared/responses/error/500.yaml

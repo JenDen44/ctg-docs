@@ -1,0 +1,27 @@
+description: |
+  Неверный запрос:
+  - Некорректные параметры пагинации
+  - Ошибки валидации входных данных
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/error.yaml
+    examples:
+      invalidPage:
+        value:
+          title: Неверный параметр
+          message: Некорректные параметры пагинации
+          code: 400
+          fields:
+            - field: page
+              message: Должно быть не меньше 0
+            - field: size
+              message: Должно быть между 1 и 100
+      invalidSort:
+        value:
+          title: Неверная сортировка
+          message: Недопустимое поле для сортировки
+          code: 400
+          fields:
+            - field: sort
+              message: 'Допустимые значения: id, fullName, email, createdAt'

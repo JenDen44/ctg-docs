@@ -1,0 +1,10 @@
+description: Доступ запрещён
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/error.yaml
+    example:
+      title: Доступ запрещён
+      message: Недостаточно прав для выполнения действия
+      code: 403
+      fields: null

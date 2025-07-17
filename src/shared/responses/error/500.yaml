@@ -1,0 +1,23 @@
+description: |
+  Внутренняя ошибка сервера:
+  - Проблемы с подключением к базе данных
+  - Непредвиденные системные ошибки
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/error.yaml
+    examples:
+      databaseError:
+        value:
+          title: Ошибка базы данных
+          message: Не удалось выполнить запрос
+          code: 500
+          fields: null
+      unexpectedError:
+        value:
+          title: Непредвиденная ошибка
+          message: Попробуйте повторить запрос позже
+          code: 500
+          fields:
+            - field: system
+              message: Ведется устранение неполадок

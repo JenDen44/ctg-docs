@@ -1,0 +1,25 @@
+openapi: 3.1.0
+info:
+  title: Coffee to go. Admin API
+  description: |
+    Admin API для системы заказа кофе с доставкой.
+    Позволяет управлять сотрудниками, меню, принимать заказы и отслеживать их статус.
+  version: 1.0.0
+  license:
+    identifier: "proprietary"
+    name: "Лицензия JnD"
+servers:
+  - url: https://coffe-to-go.com/admin/api
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: >
+        Аутентификация через Bearer-токен.
+        Пример заголовка: `Authorization: Bearer <ваш_токен>`
+tags:
+  - $ref: ./users/tag.yaml
+paths:
+  $ref: ./users/paths.yaml

@@ -1,0 +1,10 @@
+in: query
+name: page
+description: |
+  Номер страницы для пагинации (начинается с 0).
+  Используется вместе с параметром `size` для управления разбиением на страницы.
+schema:
+  type: integer
+  minimum: 0
+  default: 0
+  example: 0

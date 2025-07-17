@@ -1,0 +1,59 @@
+summary: Обновление данных пользователя
+description: |
+  Обновляет информацию о пользователе (имя, email, пароль или роль).
+  Требует прав администратора.
+  Пароль изменяется только если передан в запросе.
+operationId: update-user
+tags:
+  - users
+security:
+  - bearerAuth: []
+parameters:
+  - in: path
+    name: id
+    required: true
+    schema:
+      $ref: ../schemas/user-id.yaml
+requestBody:
+  required: true
+  description: Данные для обновления
+  content:
+    application/json:
+      schema:
+        $ref: ../schemas/updated-user.yaml
+      examples:
+        updateWithoutPassword:
+          summary: Обновление без смены пароля
+          value:
+            fullName: "Анна Ковалева"
+            email: "a.kovaleva@example.com"
+            role: "employee"
+        updateWithPassword:
+          summary: Обновление с изменением пароля
+          value:
+            fullName: "Дмитрий Соколов"
+            email: "d.sokolov@example.com"
+            password: "NewSecureP@ss123"
+            role: "admin"
+responses:
+  '200':
+    description: Данные пользователя успешно обновлены
+    content:
+      application/json:
+        schema:
+          $ref: ../schemas/user.yaml
+
+  '401':
+    $ref: ../../shared/responses/error/401.yaml
+
+  '403':
+    $ref: ../../shared/responses/error/403.yaml
+
+  '404':
+      $ref: ../../shared/responses/error/404.yaml
+
+  '422':
+      $ref: ../../shared/responses/error/422.yaml
+
+  '500':
+      $ref: ../../shared/responses/error/500.yaml

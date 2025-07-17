@@ -1,0 +1,44 @@
+summary: Обновление данных текущего пользователя
+description: |
+  Обновляет информацию о текущем пользователе (имя, email, пароль).
+  Пароль изменяется только если передан в запросе.
+operationId: update-current-user
+tags:
+  - users
+security:
+  - bearerAuth: []
+requestBody:
+  required: true
+  description: Данные для обновления
+  content:
+    application/json:
+      schema:
+        $ref: ../schemas/updated-current-user.yaml
+      examples:
+        updateWithoutPassword:
+          summary: Обновление без смены пароля
+          value:
+            fullName: "Анна Ковалева"
+            email: "a.kovaleva@example.com"
+        updateWithPassword:
+          summary: Обновление с изменением пароля
+          value:
+            fullName: "Дмитрий Соколов"
+            email: "d.sokolov@example.com"
+            password: "NewSecureP@ss123"
+responses:
+  '200':
+    description: Данные пользователя успешно обновлены
+    content:
+      application/json:
+        schema:
+          $ref: ../schemas/user.yaml
+
+  '401':
+    $ref: ../../shared/responses/error/401.yaml
+
+  '422':
+      $ref: ../../shared/responses/error/422.yaml
+
+  '500':
+      $ref: ../../shared/responses/error/500.yaml
