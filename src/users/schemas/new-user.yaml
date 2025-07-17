@@ -1,16 +1,11 @@
 type: object
 required:
-  - fullName
-  - email
-  - password
-  - role
-properties:
-  fullName:
-    type: string
-    minLength: 2
-    maxLength: 100
-    example: Иван Петров
-    description: Полное имя пользователя
+fullName:
+  type: string
+  minLength: 2
+  maxLength: 100
+  example: Иван Петров
+  description: Полное имя пользователя
   email:
     type: string
     format: email
