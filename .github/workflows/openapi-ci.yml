@@ -42,10 +42,10 @@ jobs:
       - name: Сборка документации
         run: npm run build
 
-      # Шаг 7: Сохраняем результат сборки (артефакт)
+      # Шаг 7: Сохраняем результат сборки (артефакт) — ОБНОВЛЁННАЯ ВЕРСИЯ v4
       - name: Сохранение собранной документации
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: openapi-docs
           path: dist/
-          retention-days: 1  # Храним артефакты 1 день
+          retention-days: 1
