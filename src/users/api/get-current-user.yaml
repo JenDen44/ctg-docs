@@ -14,7 +14,7 @@ responses:
           $ref: ../schemas/user.yaml
 
   '401':
-    $ref: src/shared/responses/error/401.yaml
+    $ref: ../../shared/responses/error/401.yaml
 
   '500':
-    $ref: src/shared/responses/error/500.yaml
+    $ref: ../../shared/responses/error/500.yaml

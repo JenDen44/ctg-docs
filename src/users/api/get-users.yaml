@@ -8,10 +8,10 @@ tags:
 security:
   - bearerAuth: []
 parameters:
-  - $ref: src/shared/parameters/pagination/page.yaml
-  - $ref: src/shared/parameters/pagination/size.yaml
-  - $ref: src/shared/parameters/sort/sort.yaml
-  - $ref: src/shared/parameters/sort/sort-dir.yaml
+  - $ref: ../../shared/parameters/pagination/page.yaml
+  - $ref: ../../shared/parameters/pagination/size.yaml
+  - $ref: ../../shared/parameters/sort/sort.yaml
+  - $ref: ../../shared/parameters/sort/sort-dir.yaml
   - in: query
     name: search
     description: Поле поиска (фильтрация по имени, email и т.д.)
@@ -42,7 +42,7 @@ responses:
                   description: Список пользователей
                   items:
                     $ref: ../schemas/user.yaml
-            - $ref: src/shared/schemas/pagination-response.yaml
+            - $ref: ../../shared/schemas/pagination-response.yaml
         examples:
           firstPage:
             value:
@@ -72,13 +72,13 @@ responses:
               totalPages: 2
 
   '400':
-    $ref: src/shared/responses/error/400.yaml
+    $ref: ../../shared/responses/error/400.yaml
 
   '401':
-    $ref: src/shared/responses/error/401.yaml
+    $ref: ../../shared/responses/error/401.yaml
 
   '403':
-    $ref: src/shared/responses/error/403.yaml
+    $ref: ../../shared/responses/error/403.yaml
 
   '500':
-    $ref: src/shared/responses/error/500.yaml
+    $ref: ../../shared/responses/error/500.yaml
