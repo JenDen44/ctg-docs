@@ -1,10 +1,10 @@
 # Coffee-to-go API Documentation
 
-Документация API для сервиса Coffee-to-go в формате OpenAPI 3.1.
-
-📘 **Онлайн-документация**:
 [![CI Status](https://github.com/JenDen44/ctg-docs/actions/workflows/openapi-ci.yml/badge.svg)](https://github.com/JenDen44/ctg-docs/actions)
 [![GitHub Pages](https://img.shields.io/badge/docs-online-blue)](https://jenden44.github.io/ctg-docs/)
+
+Документация API для сервиса Coffee-to-go в формате OpenAPI 3.1.
+
 
 ## Требования
 
