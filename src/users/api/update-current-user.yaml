@@ -35,10 +35,10 @@ responses:
           $ref: ../schemas/user.yaml
 
   '401':
-    $ref: ../../shared/responses/error/401.yaml
+    $ref: src/shared/responses/error/401.yaml
 
   '422':
-      $ref: ../../shared/responses/error/422.yaml
+      $ref: src/shared/responses/error/422.yaml
 
   '500':
-      $ref: ../../shared/responses/error/500.yaml
+      $ref: src/shared/responses/error/500.yaml

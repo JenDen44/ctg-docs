@@ -22,13 +22,13 @@ responses:
           $ref: ../schemas/user.yaml
 
   '401':
-    $ref: ../../shared/responses/error/401.yaml
+    $ref: src/shared/responses/error/401.yaml
 
   '403':
-    $ref: ../../shared/responses/error/403.yaml
+    $ref: src/shared/responses/error/403.yaml
 
   '404':
-    $ref: ../../shared/responses/error/404.yaml
+    $ref: src/shared/responses/error/404.yaml
 
   '500':
-    $ref: ../../shared/responses/error/500.yaml
+    $ref: src/shared/responses/error/500.yaml
