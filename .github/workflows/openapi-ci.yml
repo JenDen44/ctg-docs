@@ -50,3 +50,22 @@ jobs:
           name: openapi-docs
           path: dist/
           retention-days: 1
+
+  deploy:
+      name: Деплой на GitHub Pages
+      if: github.ref == 'refs/heads/main'
+      runs-on: ubuntu-latest
+      needs: lint-and-build
+
+      steps:
+        - name: Загрузка собранной документации
+          uses: actions/download-artifact@v4
+          with:
+            name: openapi-docs
+            path: dist
+
+        - name: Публикация на GitHub Pages
+          uses: peaceiris/actions-gh-pages@v4
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: dist
