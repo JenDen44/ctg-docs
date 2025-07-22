@@ -1,0 +1,14 @@
+type: object
+required:
+  - token
+  - refreshToken
+properties:
+  token:
+    type: string
+    description: JWT токен доступа
+    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+  refreshToken:
+    type: string
+    description: JWT токен обновления
+    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+description: Ответ с JWT токенами после успешной авторизации

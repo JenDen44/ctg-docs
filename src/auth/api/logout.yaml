@@ -1,0 +1,16 @@
+summary: Выход пользователя
+description: Завершает сессию пользователя и делает refresh-токен недействительным.
+operationId: logout
+tags:
+  - auth
+security:
+  - bearerAuth: []
+responses:
+  '204':
+    description: Успешный выход. Ответ без тела.
+
+  '401':
+    $ref: ../../shared/responses/error/401.yaml
+
+  '500':
+    $ref: ../../shared/responses/error/500.yaml

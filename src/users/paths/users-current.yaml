@@ -1,0 +1,4 @@
+get:
+  $ref: ../api/get-current-user.yaml
+put:
+  $ref: ../api/update-current-user.yaml

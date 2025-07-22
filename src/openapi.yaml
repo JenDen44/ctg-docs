@@ -9,7 +9,7 @@ info:
     identifier: "proprietary"
     name: "Лицензия JnD"
 servers:
-  - url: https://coffe-to-go.com/admin/api
+  - url: https://coffe-to-go.com/admin/api/v1
 components:
   securitySchemes:
     bearerAuth:
@@ -20,6 +20,6 @@ components:
         Аутентификация через Bearer-токен.
         Пример заголовка: `Authorization: Bearer <ваш_токен>`
 tags:
-  - $ref: ./users/tag.yaml
+  $ref: ./tags.yaml
 paths:
-  $ref: ./users/paths.yaml
+  $ref: ./paths.yaml

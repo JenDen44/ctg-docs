@@ -1,0 +1,4 @@
+get:
+  $ref: ../api/get-users.yaml
+post:
+  $ref: ../api/create-user.yaml

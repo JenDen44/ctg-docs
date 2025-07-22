@@ -1,0 +1,12 @@
+type: object
+required:
+  - login
+  - password
+properties:
+  login:
+    type: string
+    description: Логин пользователя (может быть email или имя пользователя)
+    example: user@example.com
+  password:
+    $ref: ../../shared/schemas/password.yaml
+description: Данные для входа пользователя

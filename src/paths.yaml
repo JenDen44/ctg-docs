@@ -1,0 +1,17 @@
+/login:
+  $ref: ./auth/paths/login.yaml
+
+/logout:
+  $ref: ./auth/paths/logout.yaml
+
+/refresh:
+  $ref: ./auth/paths/refresh.yaml
+
+/users:
+  $ref: ./users/paths/users.yaml
+
+/users/{id}:
+  $ref: ./users/paths/users-id.yaml
+
+/users/current:
+  $ref: ./users/paths/users-current.yaml

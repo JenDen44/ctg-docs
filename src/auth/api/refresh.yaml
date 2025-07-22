@@ -1,0 +1,29 @@
+summary: Обновление токенов
+description: |
+  Принимает refresh-токен в заголовке Authorization и возвращает новую пару access и refresh токенов.
+  Заголовок должен иметь вид: `Authorization: Bearer <refresh_token>`
+operationId: refresh
+tags:
+  - auth
+security: []
+parameters:
+  - name: Authorization
+    in: header
+    required: true
+    schema:
+      type: string
+      example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+    description: Refresh-токен в формате Bearer
+responses:
+  '200':
+    description: Успешное обновление токенов
+    content:
+      application/json:
+        schema:
+          $ref: ../schemas/tokens.yaml
+
+  '403':
+    $ref: ../../shared/responses/error/403.yaml
+
+  '500':
+    $ref: ../../shared/responses/error/500.yaml

@@ -1,0 +1,25 @@
+summary: Авторизация пользователя
+description: Авторизует пользователя по логину и паролю и возвращает JWT токены доступа и обновления.
+operationId: login
+tags:
+  - auth
+security: []
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: ../schemas/login.yaml
+responses:
+  '200':
+    description: Успешная авторизация
+    content:
+      application/json:
+        schema:
+          $ref: ../schemas/tokens.yaml
+
+  '403':
+    $ref: ../../shared/responses/error/403.yaml
+
+  '500':
+    $ref: ../../shared/responses/error/500.yaml
