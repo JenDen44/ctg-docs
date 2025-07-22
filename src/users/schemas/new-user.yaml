@@ -17,11 +17,6 @@ properties:
     example: user@example.com
     description: Email адрес (должен быть уникальным)
   password:
-    type: string
-    format: password
-    minLength: 8
-    example: Str0ngP@ss!
-    description: Пароль (минимум 8 символов, должен содержать цифры и спецсимволы)
-    writeOnly: true
+    $ref: ../../shared/schemas/password.yaml
   role:
     $ref: ./user-role.yaml

@@ -1,0 +1,6 @@
+get:
+  $ref: ../api/get-user.yaml
+put:
+  $ref: ../api/update-user.yaml
+delete:
+  $ref: ../api/delete-user.yaml

@@ -1,0 +1,2 @@
+- $ref: ./auth/tag.yaml
+- $ref: ./users/tag.yaml
