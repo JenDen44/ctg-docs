@@ -19,13 +19,13 @@ requestBody:
             fullName: Админ
             email: admin@example.com
             password: AdminP@ss123
-            role: admin
+            role: ADMIN
         employee:
           value:
             fullName: Сотрудник
             email: employee@example.com
             password: employee@ss123
-            role: employee
+            role: EMPLOYEE
 responses:
   '201':
     description: Пользователь создан
