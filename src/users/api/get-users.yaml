@@ -27,7 +27,7 @@ parameters:
       type: array
       items:
         $ref: ../schemas/user-role.yaml
-      example: ['admin']
+      example: ['ADMIN']
 responses:
   '200':
     description: Список пользователей
@@ -50,11 +50,11 @@ responses:
                 - id: 1
                   fullName: Админ Системы
                   email: admin@example.com
-                  role: admin
+                  role: ADMIN
                 - id: 2
                   fullName: Менеджер
                   email: manager@example.com
-                  role: employee
+                  role: EMPLOYEE
               pageNumber: 0
               pageSize: 2
               totalElements: 3
@@ -65,7 +65,7 @@ responses:
                 - id: 3
                   fullName: Тестовый Пользователь
                   email: test@example.com
-                  role: employee
+                  role: EMPLOYEE
               pageNumber: 1
               pageSize: 2
               totalElements: 3

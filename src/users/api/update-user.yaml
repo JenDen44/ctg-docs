@@ -27,14 +27,14 @@ requestBody:
           value:
             fullName: "Анна Ковалева"
             email: "a.kovaleva@example.com"
-            role: "employee"
+            role: "EMPLOYEE"
         updateWithPassword:
           summary: Обновление с изменением пароля
           value:
             fullName: "Дмитрий Соколов"
             email: "d.sokolov@example.com"
             password: "NewSecureP@ss123"
-            role: "admin"
+            role: "ADMIN"
 responses:
   '200':
     description: Данные пользователя успешно обновлены
