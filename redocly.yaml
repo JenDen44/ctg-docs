@@ -1,6 +1,2 @@
-theme:
-  openapi:
-    hideDownloadButton: false
-    menuToggle: true
 extends:
   - recommended
